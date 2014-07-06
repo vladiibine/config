@@ -1,0 +1,30 @@
+alias wl='wc -l'
+alias pym='python manage.py'
+
+alias astronotify='xargs -I {} at now + {} minutes < <(echo "notify-send TROOPS")'
+
+#alias astronotify='xargs -I {} at now + {} minutes < <(echo "notify-send TROOPS")'
+
+if [ -x /usr/bin/dircolors ]; then
+    alias egrep='egrep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias grep='grep --color=auto'
+
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    #alias vdir='vdir --color=auto'
+    #alias dir='dir --color=auto'
+    alias ls='ls --color=auto'
+fi
+
+# enable color support of ls and also add handy aliases
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alFh'
+# some more ls aliases
+
+alias eng='LANGUAGE=en_US.UTF-8'
+#VWH eng expands to LANGUAGE=en_US.UTF-8
+
+alias clear='echo -en "\ec"'
+#VWH alias `clear' clears the current shell
+
