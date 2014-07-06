@@ -27,3 +27,7 @@ alias eng='LANGUAGE=en_US.UTF-8'
 
 #VWH alias `clear' clears the current shell
 alias clear='echo -en "\ec"'
+
+#ZSH specific aliases (will work for bash too, though they regard operations on the .zshrc file)
+alias vz='vim ~/.zshrc'
+alias sz='source ~/.zshrc'

@@ -22,6 +22,16 @@ fi
 export PS1="%{%F{yellow}%}%T]%{%F{green}%}%n%{%F{yellow}%} %~ %{$%f%} "
 #PS1="%{%F{red}%}%n%{%f%}@%{%F{blue}%}%m %{%F{yellow}%}%~ %{$%f%}%% "
 
+#Virtualenv(+wrapper) housekeeping
 export WORKON_HOME=~/ve
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+#Activate default crappy environment
+workon tmp2
 
+#Git housekeeping (enable PS1 or any Prompt string to use __git_ps1 to show branch)
+if [[ -e /etc/bash_completion.d/git-prompt ]]; then
+	. /etc/bash_completion.d/git-prompt
+fi
+#enable prompt substitution - otherwise it executes RPROMPT only once, at `source .zshrc` time
+setopt PROMPT_SUBST ;
+export RPROMPT='%{%F{red}%}$(__git_ps1 2>/dev/null)'
