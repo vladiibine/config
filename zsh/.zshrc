@@ -25,4 +25,3 @@ export PS1="%{%F{yellow}%}%T]%{%F{green}%}%n%{%F{yellow}%} %~ %{$%f%} "
 export WORKON_HOME=~/ve
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
-alias clear='echo -en "\ec"'

@@ -22,9 +22,8 @@ alias la='ls -A'
 alias ll='ls -alFh'
 # some more ls aliases
 
-alias eng='LANGUAGE=en_US.UTF-8'
 #VWH eng expands to LANGUAGE=en_US.UTF-8
+alias eng='LANGUAGE=en_US.UTF-8'
 
-alias clear='echo -en "\ec"'
 #VWH alias `clear' clears the current shell
-
+alias clear='echo -en "\ec"'
