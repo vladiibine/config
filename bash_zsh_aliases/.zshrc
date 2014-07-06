@@ -38,3 +38,13 @@ export RPROMPT='%{%F{red}%}$(__git_ps1 2>/dev/null)'
 
 #fix deleting backwards after reentering edit mode
 bindkey "^?" backward-delete-char
+
+#fix the god damn vi mode alltogether - use Emacs mode.... fucking stupid vi, i HATE it!!
+#Don't forget your shortcuts now
+# M-f   moves one word forward
+# M-b   modes one word backwards
+# M-d   deletes forwad 1 word
+# M-backspace    deletes backwords 1 word
+# C-s X    goes to next occurence of X
+# C-r X    goes to previous occurence of X
+bindkey -e
