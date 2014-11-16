@@ -2,6 +2,12 @@
 
 c = get_config()
 
+#VWH use my bash aliases
+import os
+raw_aliases = (_x.split(' ', 1)[1] for _x in os.popen('bash -lci alias').read().splitlines())
+#TODO need a little more work here, to convert and put my aliases into the .user_aliases config dict
+c.AliasManager.user_aliases = [('"ppp"','"pwd"')]
+
 #------------------------------------------------------------------------------
 # InteractiveShellApp configuration
 #------------------------------------------------------------------------------
