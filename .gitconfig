@@ -15,3 +15,7 @@
 
 [core]
     excludesfile = ~/.gitignore
+[push]
+# This makes it ok to use `git push` (by accident). 
+# It will only push from the current to its tracked branch
+	default = simple
