@@ -1,0 +1,19 @@
+import pdb
+from inspect import stack as __stack
+from pdb import Pdb as __Pdb
+from IPython.core.debugger import Pdb as __IPdb
+pdb.__pdb = [__framerec[0].f_locals.get("pdb") or __framerec[0].f_locals.get("self") for __framerec in __stack() if (__framerec[0].f_locals.get("pdb") or __framerec[0].f_locals.get("self")).__class__ in (__Pdb, __IPdb)][-1]
+def __getatr(v, a): import pdb; return pdb.__getatr(getattr(v, a.split('.',1)[0]), a.split('.',1)[1]) if '.' in a else getattr(v, a)
+def __getvar(d, k): import pdb; return pdb.__getatr(d[k.split('.',1)[0]], k.split('.',1)[1]) if '.' in k else d[k.split('.',1)[0]]
+pdb.__getatr = __getatr
+pdb.__getvar = __getvar
+from inspect import currentframe as __currentframe; pdb.__currentframe = __currentframe
+from copy import copy as __copy; pdb.__copy = __copy
+alias _setup_watchpoint import pdb;; pdb.__key = '%1'; pdb.__dict = pdb.__currentframe().f_locals if pdb.__currentframe().f_locals.has_key(pdb.__key.split('.')[0]) else pdb.__currentframe().f_globals; pdb.__val = pdb.__copy(%1)
+def __swi(t, a): import pdb; pdb.__getvar(pdb.__dict, pdb.__key) == pdb.__val and pdb.__pdb.cmdqueue.append("_%swatch_internal %s" % (t, a))
+pdb.__swi = __swi
+alias _nextwatch_internal next;; import pdb; pdb.__swi('next', '%1')
+alias _stepwatch_internal step;; import pdb; pdb.__swi('step', '%1')
+alias nextwatch import pdb; pdb.__pdb.cmdqueue.extend(["_setup_watchpoint %1", "_nextwatch_internal"])
+# Usage: stepwatch myobj.myattr -> will run until the value is changed
+alias stepwatch import pdb; pdb.__pdb.cmdqueue.extend(["_setup_watchpoint %1", "_stepwatch_internal"])
