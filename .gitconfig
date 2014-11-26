@@ -1,0 +1,17 @@
+[user]
+    name = vladiibine
+    email = vlad.ardelean@3pillarglobal.com
+
+[alias]
+    l = log --oneline --decorate --graph
+    l2 = log --graph --format='%h %Cred%ad%Creset %C(yellow)%aN%Creset %s'
+	br = branch
+	st = status
+	co = checkout
+	ci = commit
+
+[color]
+    ui = auto
+
+[core]
+    excludesfile = ~/.gitignore
