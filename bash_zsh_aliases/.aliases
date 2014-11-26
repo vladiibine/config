@@ -37,7 +37,7 @@ alias ipy='ipython --profile=vardelean'
 
 #VWH function opens a disowned process (that is, if the shell dies, it continues to live)
 #usage: `x gedit'
-function x { ($1&) }
+function x { ($1 &>/dev/null &) }
 
 #VWH delete .pyc files under provided directory
 #Usage `delpyc .' or `delpyc /some/dir'
