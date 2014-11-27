@@ -44,3 +44,6 @@ function x { ($1 &>/dev/null &) }
 function delpyc {
     find $1 -name '*.pyc' -delete
 }
+
+#VWH Local aliases (not portable by definition)
+source ~/.local_aliases
