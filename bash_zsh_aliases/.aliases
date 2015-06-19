@@ -45,5 +45,16 @@ function delpyc {
     find $1 -name '*.pyc' -delete
 }
 
+#VWH find PID of process listening on given TCP port
+#Usage: `wholisten 9876'
+#Explanations: `netstat -tlpn` #- all processess listening on TCP ports
+#tr -s ' ' #- squashes spaces in the string
+#xargs #-trims the string
+function wholisten { netstat -tlpn|grep $1| tr -s ' '|rev|xargs|cut -d' ' -f1|rev|cut -d'/' -f1 }
+
+#VWH kill the process that listens on the provided port
+function killlisten { kill -9 `wholisten $1`}
+
+
 #VWH Local aliases (not portable by definition)
 source ~/.local_aliases
