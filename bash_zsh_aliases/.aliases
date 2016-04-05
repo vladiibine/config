@@ -55,6 +55,17 @@ function wholisten { netstat -tlpn|grep $1| tr -s ' '|rev|xargs|cut -d' ' -f1|re
 #VWH kill the process that listens on the provided port
 function killlisten { kill -9 `wholisten $1`}
 
+function clickill(){
+python -c "import autopy, time
+print('i am inside the script')
+for _ in range($1):
+    print('i am inside the loop')
+    autopy.mouse.click()
+    time.sleep(0.05)
+    print('i am at the end of the loop')
+"
+}
+alias ck=clickill
 
 #VWH Local aliases (not portable by definition)
 source ~/.local_aliases
