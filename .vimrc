@@ -1,8 +1,11 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" This was taken from here https://github.com/VundleVim/Vundle.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 
 " let Vundle manage Vundle
 " required! 
@@ -14,14 +17,14 @@ filetype plugin indent on     " required!
 
 
 "<Tab> inserts 4 spaces
-set tabstop=8
+set tabstop=4
 
 " Indent level is 4 spaces wide
 set shiftwidth=4            
-set smartindent
+"set smartindent
 
 " <BS> over an autoindent deletes both spaces
-set softtabstop=4           
+"set softtabstop=4           
 set tabstop=4
 
 " Don't fold by default
@@ -33,8 +36,12 @@ set colorcolumn=79
 " Handle tabs more intelligently
 set smarttab                
 
+" VWH dont expand tabs
+set noexpandtab
+set autoindent
+
 " Use spaces, not tabs, for autoindent/tab key
-set expandtab
+"set expandtab
 
 " Rounds indent to a multiple of shiftwidth
 set shiftround              
