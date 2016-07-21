@@ -67,5 +67,8 @@ for _ in range($1):
 }
 alias ck=clickill
 
+# The one and only csf
+alias csf="echo -e '\n¯\_(ツ)_/¯\n'"
+
 #VWH Local aliases (not portable by definition)
 source ~/.local_aliases
