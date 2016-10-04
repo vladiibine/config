@@ -19,7 +19,9 @@ fi
 #VWH
 #export PS1="%T]%n:%~$ "
 #export PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
-export PS1="%{%F{yellow}%}%T]%{%F{green}%}%n%{%F{yellow}%} %~ %{$%f%} "
+#export PS1="%{%F{yellow}%}%T]%{%F{green}%}%n%{%F{yellow}%} %~ %{$%f%} "
+# http://stackoverflow.com/questions/39423333/zsh-bug-on-multiline-commands-deleting-messes-up-characters
+export PS1="%F{yellow}%T]%F{green}%n%F{yellow} %~ $%f "
 #PS1="%{%F{red}%}%n%{%f%}@%{%F{blue}%}%m %{%F{yellow}%}%~ %{$%f%}%% "
 
 #Virtualenv(+wrapper) housekeeping
