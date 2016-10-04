@@ -19,7 +19,9 @@ fi
 #VWH
 #export PS1="%T]%n:%~$ "
 #export PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%}%% "
-export PS1="%{%F{yellow}%}%T]%{%F{green}%}%n%{%F{yellow}%} %~ %{$%f%} "
+#export PS1="%{%F{yellow}%}%T]%{%F{green}%}%n%{%F{yellow}%} %~ %{$%f%} "
+# http://stackoverflow.com/questions/39423333/zsh-bug-on-multiline-commands-deleting-messes-up-characters
+export PS1="%F{yellow}%T]%F{green}%n%F{yellow} %~ $%f "
 #PS1="%{%F{red}%}%n%{%f%}@%{%F{blue}%}%m %{%F{yellow}%}%~ %{$%f%}%% "
 
 #Virtualenv(+wrapper) housekeeping
@@ -35,3 +37,16 @@ fi
 #enable prompt substitution - otherwise it executes RPROMPT only once, at `source .zshrc` time
 setopt PROMPT_SUBST ;
 export RPROMPT='%{%F{red}%}$(__git_ps1 2>/dev/null)'
+
+#fix deleting backwards after reentering edit mode
+bindkey "^?" backward-delete-char
+
+#fix the god damn vi mode alltogether - use Emacs mode.... fucking stupid vi, i HATE it!!
+#Don't forget your shortcuts now
+# M-f   moves one word forward
+# M-b   modes one word backwards
+# M-d   deletes forwad 1 word
+# M-backspace    deletes backwords 1 word
+# C-s X    goes to next occurence of X
+# C-r X    goes to previous occurence of X
+bindkey -e
