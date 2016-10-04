@@ -1,1 +1,1 @@
-This is where i keep config files of different nature
+This is where I keep config files of different nature
