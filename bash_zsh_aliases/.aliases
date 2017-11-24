@@ -35,6 +35,9 @@ alias sz='source ~/.zshrc'
 #VWH ipython
 alias ipy='ipython --profile=vardelean'
 
+# usage: echo 'asdf' |xx    -> now you have 'asdf' in your clipboard
+alias xx='xclip -selection clipboard'
+
 #VWH function opens a disowned process (that is, if the shell dies, it continues to live)
 #usage: `x gedit'
 function x { ($* &>/dev/null &) }
