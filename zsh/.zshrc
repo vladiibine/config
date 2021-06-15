@@ -10,6 +10,11 @@ zstyle :compinstall filename '/home/shefuto/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+# Vlad: macOS specific commands, make delete-word, and jump-over-word act line 
+# on ubuntu (action stops at word separators like /-_ etc)
+# source: https://apple.stackexchange.com/questions/180913/in-iterm-how-can-i-change-altdelete-to-ignore-slashes
+#autoload -U select-word-style
+#select-word-style bash
 
 #VWH use same aliases as bash
 if [ -f ~/.aliases ]; then
